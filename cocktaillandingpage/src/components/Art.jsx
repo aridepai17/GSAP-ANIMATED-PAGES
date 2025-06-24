@@ -1,10 +1,7 @@
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useMediaQuery } from "react-responsive";
 import { useGSAP } from "@gsap/react";
-import { featureLists, goodLists } from "../../constants/index";
-
-gsap.registerPlugin(ScrollTrigger);
+import { featureLists, goodLists } from "../../constants/index.js";
 
 const Art = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -28,10 +25,8 @@ const Art = () => {
         scale: 1.3,
         maskPosition: "center",
         maskSize: "400%",
-        webkitMaskPosition: "center",
-        webkitMaskSize: "400%",
         duration: 1,
-        ease: "power1.inOut",
+        ease: "power1.inOut ",
       })
       .to("#masked-content", { opacity: 1, duration: 1, ease: "power1.inOut" });
   });
@@ -74,7 +69,7 @@ const Art = () => {
           <div id="masked-content">
             <h3>Made with Craft, Poured with Passion</h3>
             <p>
-              This isn't just a drink. It's carefully crafted moment made just
+              This isn’t just a drink. It’s a carefully crafted moment made just
               for you.
             </p>
           </div>
@@ -83,5 +78,4 @@ const Art = () => {
     </div>
   );
 };
-
 export default Art;
