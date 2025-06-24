@@ -1,6 +1,8 @@
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
+import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(SplitText);
 
 const About = () => {
   useGSAP(() => {
