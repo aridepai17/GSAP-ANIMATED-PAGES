@@ -60,12 +60,12 @@ const Hero = () => {
         start: startValue,
         end: endValue,
         scrub: true,
-        pin: true,
+        pin: !isMobile,
       }
     });
 
     videoRef.current.onloadedmetadata = () => {
-      videoRef.current.playbackRate = 0.2;
+      videoRef.current.playbackRate = 0.3;
       tl.to(videoRef.current, {
         currentTime: videoRef.current.duration, 
       });
@@ -103,7 +103,7 @@ const Hero = () => {
       </section>
 
       <div className='video absolute inset-0'>
-        <video ref={videoRef} muted playsInline preload="auto" src='/videos/output.mp4'/>
+        <video ref={videoRef} muted playsInline preload="auto" autoPlay  src='/videos/output.mp4'/>
       </div>
     </>
   );
