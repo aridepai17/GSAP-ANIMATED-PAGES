@@ -46,11 +46,11 @@ const Art = () => {
             ))}
           </ul>
 
-          <div className="cocktail-img">
+          <div className="cocktail-img absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[70vh] rounded-4xl overflow-hidden">
             <img
               src="/images/under-img.jpg"
               alt="cocktail"
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-full object-contain masked-img"
+              className="w-full h-full object-contain masked-img"
             />
           </div>
 
