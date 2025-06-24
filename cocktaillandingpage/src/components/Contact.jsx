@@ -1,6 +1,6 @@
-import { openingHours, socials } from "../../constants/index";
+import { openingHours, socials } from "../../constants/index.js";
 import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/SplitText";
+import { SplitText } from "gsap/all";
 import gsap from "gsap";
 
 const Contact = () => {
@@ -12,7 +12,7 @@ const Contact = () => {
         trigger: "#contact",
         start: "top center",
       },
-      ease: "power1.out",
+      ease: "power1.inOut",
     });
 
     timeline
@@ -21,7 +21,7 @@ const Contact = () => {
         yPercent: 100,
         stagger: 0.02,
       })
-      .from("#contact h3", "contact p", {
+      .from("#contact h3, #contact p", {
         opacity: 0,
         yPercent: 100,
         stagger: 0.02,
@@ -59,14 +59,14 @@ const Contact = () => {
         <h2>Where to Find Us</h2>
 
         <div>
-          <h3>Visit our Bar</h3>
-          <p>456, Ra1 Blvd, #404, Los Angeles, CA 90210</p>
+          <h3>Visit Our Bar</h3>
+          <p>456, Raq Blvd. #404, Los Angeles, CA 90210</p>
         </div>
 
         <div>
           <h3>Contact Us</h3>
-          <p>Phone: +1 234 567 890</p>
-          <p>hello@velvetpour.com</p>
+          <p>(555) 987-6543</p>
+          <p>hello@jsmcocktail.com</p>
         </div>
 
         <div>
