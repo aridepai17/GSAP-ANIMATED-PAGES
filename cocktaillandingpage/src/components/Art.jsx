@@ -50,7 +50,7 @@ const Art = () => {
             <img
               src="/images/under-img.jpg"
               alt="cocktail"
-              className="abs-center masked-img size-full object-contain"
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-full object-contain masked-img"
             />
           </div>
 
