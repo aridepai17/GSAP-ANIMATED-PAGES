@@ -1,4 +1,4 @@
-# GSAP Animated Pages 🎬
+# GSAP ANIMATED PAGES 🎬
 
 A collection of interactive web experiences showcasing the power of GSAP (GreenSock Animation Platform) animations and modern web technologies.
 
