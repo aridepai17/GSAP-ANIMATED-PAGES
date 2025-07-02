@@ -1,0 +1,75 @@
+@import url("https://rsms.me/inter/inter.css");
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 100 900;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+svg {
+  display: none;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  HEIGHT: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  -webkit-filter: url(#displace);
+  filter: url("#displace");
+  perspective: 400px;
+  overflow: visible;
+}
+
+.text-wrap {
+  margin: auto;
+  overflow: hidden;
+}
+
+.text-line {
+  background: white;
+}
+
+.text-line:nth-of-type(even) {
+  background: black;
+}
+.text-line:nth-of-type(even) .text {
+  color: white;
+}
+
+.text {
+  margin: 0;
+  transform-style: preserve-3d;
+  font-size: 64px;
+  line-height: 1.4;
+  text-align: center;
+  letter-spacing: -3px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: black;
+}
+
+/*# sourceMappingURL=style.css.map */
