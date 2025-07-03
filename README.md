@@ -11,6 +11,7 @@ A collection of interactive web experiences showcasing the power of GSAP (GreenS
 | **Velvet Pour Landing Page** | Smooth, luxurious landing page with fluid animations | [View Demo](https://velvetpourlandingpage.vercel.app/) | Smooth scrolling, elegant transitions |
 | **Rippling 3D Text Displacement** | Interactive 3D text effects with displacement animations | [View Demo](https://rippling3dtextdisplacement.vercel.app/) | 3D text effects, displacement mapping |
 | **Keep Scrolling** | Scroll-triggered animations and interactions | [View Demo](https://keepscrolling.vercel.app/) | Scroll-based animations, parallax effects |
+| **Cyberfiction** | A cinematic, cyber-themed animated experience with GSAP and WebGL | [View Demo](https://cyberfiction-six.vercel.app/) | GSAP timelines, canvas integration, animated 3D text loop |
 
 ## 🛠️ Tech Stack
 
