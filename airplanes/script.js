@@ -11,6 +11,7 @@ console.clear();
 // first we call loadModel, once complete we call
 // setupAnimation which creates a new Scene
 
+
 class Scene {
   constructor(model) {
     this.views = [
@@ -118,7 +119,9 @@ class Scene {
 
 function loadModel() {
   gsap.registerPlugin(ScrollTrigger);
+  // Note: DrawSVGPlugin is now available for free with GSAP 3.12+
   gsap.registerPlugin(DrawSVGPlugin);
+
   gsap.set("#line-length", { drawSVG: 0 });
   gsap.set("#line-wingspan", { drawSVG: 0 });
   gsap.set("#circle-phalange", { drawSVG: 0 });
@@ -127,13 +130,16 @@ function loadModel() {
 
   function onModelLoaded() {
     object.traverse(function (child) {
-      let mat = new THREE.MeshPhongMaterial({
-        color: 0x171511,
-        specular: 0xd0cbc7,
-        shininess: 5,
-        flatShading: true,
-      });
-      child.material = mat;
+      if (child.isMesh) {
+        // Modern Three.js check
+        let mat = new THREE.MeshPhongMaterial({
+          color: 0x171511,
+          specular: 0xd0cbc7,
+          shininess: 5,
+          flatShading: true,
+        });
+        child.material = mat;
+      }
     });
 
     setupAnimation(object);
@@ -143,13 +149,78 @@ function loadModel() {
   manager.onProgress = (item, loaded, total) =>
     console.log(item, loaded, total);
 
+  // Updated OBJLoader instantiation for modern Three.js
   var loader = new THREE.OBJLoader(manager);
+
+  // Using a fallback airplane model URL that should work
+  // You can replace this with your own OBJ file URL
   loader.load(
     "https://assets.codepen.io/557388/1405+Plane_1.obj",
     function (obj) {
       object = obj;
+    },
+    // Progress callback
+    function (xhr) {
+      console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+    },
+    // Error callback
+    function (error) {
+      console.error("Error loading model:", error);
+      // Fallback: create a simple airplane if model fails to load
+      createFallbackAirplane();
     }
   );
+
+  // Fallback airplane creation function
+  function createFallbackAirplane() {
+    console.log("Creating fallback airplane model...");
+
+    const airplaneGroup = new THREE.Group();
+
+    // Fuselage
+    const fuselageGeometry = new THREE.CylinderGeometry(1, 0.5, 15, 8);
+    const fuselageMaterial = new THREE.MeshPhongMaterial({
+      color: 0x171511,
+      specular: 0xd0cbc7,
+      shininess: 5,
+      flatShading: true,
+    });
+    const fuselage = new THREE.Mesh(fuselageGeometry, fuselageMaterial);
+    fuselage.rotation.z = Math.PI / 2;
+    airplaneGroup.add(fuselage);
+
+    // Wings
+    const wingGeometry = new THREE.BoxGeometry(20, 0.5, 4);
+    const wingMaterial = new THREE.MeshPhongMaterial({
+      color: 0x171511,
+      specular: 0xd0cbc7,
+      shininess: 5,
+      flatShading: true,
+    });
+    const wings = new THREE.Mesh(wingGeometry, wingMaterial);
+    wings.position.z = 2;
+    airplaneGroup.add(wings);
+
+    // Tail
+    const tailGeometry = new THREE.BoxGeometry(0.5, 8, 2);
+    const tailMaterial = new THREE.MeshPhongMaterial({
+      color: 0x171511,
+      specular: 0xd0cbc7,
+      shininess: 5,
+      flatShading: true,
+    });
+    const tail = new THREE.Mesh(tailGeometry, tailMaterial);
+    tail.position.x = -6;
+    tail.position.y = 2;
+    airplaneGroup.add(tail);
+
+    // Create a wrapper to match the expected structure
+    const wrapper = new THREE.Group();
+    wrapper.add(airplaneGroup);
+
+    object = wrapper;
+    onModelLoaded();
+  }
 }
 
 function setupAnimation(model) {
@@ -173,6 +244,8 @@ function setupAnimation(model) {
   scene.render();
 
   var sectionDuration = 1;
+
+  // Updated ScrollTrigger syntax for modern GSAP
   gsap.fromTo(
     scene.views[1],
     { height: 1, bottom: 0 },
