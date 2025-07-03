@@ -12,6 +12,7 @@ A collection of interactive web experiences showcasing the power of GSAP (GreenS
 | **Rippling 3D Text Displacement** | Interactive 3D text effects with displacement animations | [View Demo](https://rippling3dtextdisplacement.vercel.app/) | 3D text effects, displacement mapping |
 | **Keep Scrolling** | Scroll-triggered animations and interactions | [View Demo](https://keepscrolling.vercel.app/) | Scroll-based animations, parallax effects |
 | **Cyberfiction** | A cinematic, cyber-themed animated experience with GSAP and WebGL | [View Demo](https://cyberfiction-six.vercel.app/) | GSAP timelines, canvas integration, animated 3D text loop |
+| **Airplanes 101** | A playful and animated airplane-themed web journey using GSAP and Three.js | [View Demo](https://airplanes101.vercel.app/) | SVG and canvas animations, parallax effects and GSAP ScrollTrigger |
 
 ## 🛠️ Tech Stack
 
