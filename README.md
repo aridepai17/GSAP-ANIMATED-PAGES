@@ -15,6 +15,7 @@ A collection of interactive web experiences showcasing the power of GSAP (GreenS
 | **Airplanes 101** | A playful and animated airplane-themed web journey using GSAP and Three.js | [View Demo](https://airplanes101.vercel.app/) | SVG and canvas animations, parallax effects and GSAP ScrollTrigger |
 | **Lagunitas My Take** | Bold, experimental layout with striking visuals and type | [View Demo](https://lagunitasmytake.vercel.app/) | Loud typography, bold transitions, custom GSAP animations |
 | **Fanta My Take** | A vibrant reimagination of the Fanta landing page with juicy motion design | [View Demo](https://fantamytake.vercel.app/) | Scroll-triggered fruit animations, layered SVG graphics, GSAP timelines, responsive design |
+| **Simple 3D Scroll** | Minimalist award-themed scroll animation built with GSAP | [View Demo](https://simple3dscroll.vercel.app/) | Fixed content, scroll-based zoom animations, minimal layout and scaling effects |
 
 ## 🛠️ Tech Stack
 
